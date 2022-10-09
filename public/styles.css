@@ -4,7 +4,7 @@ body {
 }
 
 .park-image-container {
-    height : 700px;
+    min-height : 700px;
     background-attachment: fixed;
     background-position: center top;
     background-size: cover;
@@ -20,7 +20,6 @@ body {
 @media only screen and (max-width: 1200px) {
     .park-image-container {
       background-attachment: scroll;
-      height : 1400px;
       font-size: 1rem;
       padding: 25px;
     }

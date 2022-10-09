@@ -33,7 +33,8 @@ const generateParallax = () => {
         d3.select(".loading-background")
             .transition()
             .duration(2000)
-            .style("opacity", 0);
+            .style("opacity", 0)
+            .remove()
     })
     
 }
