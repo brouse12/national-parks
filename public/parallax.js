@@ -20,7 +20,7 @@ const generateParallax = () => {
             .attr("class", "park-image-container")
             .style("background-image", d => getImageUrl(d))
             .append("div")
-            .attr("class", "park-info content")
+            .attr("class", "park-info")
         
         parkInfo
             .append("h2")
