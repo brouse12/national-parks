@@ -3,6 +3,10 @@ body {
     margin: 0;
 }
 
+.park-map {
+  height: 800px;
+}
+
 .park-image-container {
     min-height : 700px;
     background-attachment: fixed;
