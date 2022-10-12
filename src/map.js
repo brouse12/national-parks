@@ -1,12 +1,18 @@
 import { Loader } from '@googlemaps/js-api-loader';
 
+const park_yellowstone = { lat: 44.429764, lng: -110.58466 };
+
+// const marker = new google.maps.Marker({
+//     position: park_yellowstone,
+//     map: map,
+//   });
+
 const MAP_OPTIONS = {
-    center: {
-        lat: 39.50,
-        lng: -98.35
-    },
+    center: park_yellowstone,
     zoom: 5
+    
   };
+
 
 export const generateMap = () => {
     if (!process?.env?.MAPS_API_KEY) {
@@ -26,4 +32,6 @@ export const generateMap = () => {
     .catch(e => {
         // TODO: consider displaying an error 
     });
+
+
 }
