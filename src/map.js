@@ -1,16 +1,13 @@
 import { Loader } from '@googlemaps/js-api-loader';
-
-const park_yellowstone = { lat: 44.429764, lng: -110.58466 };
-
-// const marker = new google.maps.Marker({
-//     position: park_yellowstone,
-//     map: map,
-//   });
+import parkLocations from './data/parks_data_geo.csv'
 
 const MAP_OPTIONS = {
-    center: park_yellowstone,
+    center: {
+        lat: 39.50,
+        lng: -98.35
+    },
+    mapTypeId: 'terrain',
     zoom: 5
-    
   };
 
 
@@ -28,10 +25,36 @@ export const generateMap = () => {
       
     loader.load().then((google) => {
         const map = new google.maps.Map(mapElement, MAP_OPTIONS);
+        addMapMarkers(map)
     })
     .catch(e => {
         // TODO: consider displaying an error 
     });
 
+    const addMapMarkers = (map) => {
+        const infoWindow = new google.maps.InfoWindow({
+            content: "",
+            disableAutoPan: true,
+          });
 
+        const markers = parkLocations.map((park) => {
+            const position = {
+                lat: parseFloat(park.Latitude),
+                lng: parseFloat(park.Longitude)
+            }
+            const content =
+                `<h3>${park['Park Name']}</h3>` +
+                `<div>Origin Year: ${park['Origin Year']}</div>` +
+                `<div>Acres: ${park['Area Acres']}</div>`
+            const marker = new google.maps.Marker({
+                position,
+                map
+            })
+            marker.addListener("click", () => {
+                infoWindow.setContent(content);
+                infoWindow.open(map, marker);
+            });
+            return marker;
+        })
+    }
 }

@@ -27,16 +27,8 @@ body {
     padding: 50px;
     font-size: 1.25rem;
     text-align: center;
-}
-
-.treemap-image {
     margin-left: auto;
     margin-right: auto;
-}
-
-.center-the-header {
-  display: block;
-  text-align: center;
 }
 
 .park-info {
