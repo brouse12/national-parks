@@ -22,6 +22,14 @@ export const generateParallax = () => {
     parkInfo
         .append("h2")
         .text(d => `${d.Act} (${d.Year})`)
+
+    parkInfo
+        .append("h3")
+        .text(d => `National Parks Count: ${d['National Parks Count:']}`)
+
+    parkInfo
+        .append("h3")
+        .text(d => `Park Visitation in ${d.Year}: ${d['Year Total Park Visitation:']}`)
     
     parkInfo
         .append("p")

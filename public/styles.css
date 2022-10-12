@@ -1,6 +1,7 @@
 
 body {
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .park-map {
@@ -8,7 +9,7 @@ body {
 }
 
 .park-image-container {
-    min-height : 700px;
+    min-height : 600px;
     background-attachment: fixed;
     background-position: center top;
     background-size: cover;
@@ -20,17 +21,37 @@ body {
     font-size: 1.25rem;
 }
 
-.park-info {
+.treemap-image-container {
+    min-height : 700px;
+    max-width: fit-content;
+    padding: 50px;
+    font-size: 1.25rem;
     text-align: center;
-    background-color: gray;
+}
+
+.treemap-image {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-the-header {
+  display: block;
+  text-align: center;
+}
+
+.park-info {
+    text-align: left;
+    color: #fff;
+    background: rgba(139, 179, 195, 0.7);
     padding: 30px;
 }
 
 .footer {
   text-align: center;
+  color:#fff;
   padding: 50px;
-  background-color: gray;
-  font-size: 1.25rem;
+  background-color: rgb(9, 40, 41);
+  font-size: .75rem;
 }
 
 /* Lazy way to avoid issues on mobile devices */

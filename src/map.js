@@ -10,6 +10,7 @@ const MAP_OPTIONS = {
     zoom: 5
   };
 
+
 export const generateMap = () => {
     if (!process?.env?.MAPS_API_KEY) {
         return
