@@ -8,6 +8,10 @@ body {
   height: 800px;
 }
 
+.tableau-header {
+  text-align: center;
+}
+
 .park-image-container {
     min-height : 600px;
     background-attachment: fixed;
