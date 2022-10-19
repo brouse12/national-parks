@@ -7,6 +7,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
         <meta charset="utf-8">
         <meta name="description" content="Learn more about USA national parks">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,12 +23,30 @@
                 <div></div><div></div><div></div><div></div><div></div><div></div>
             </div>
         </div>
-    <!-- Google Map API embed -->
+
+        <!-- Title of website -->
+        <div class="header">
+            <h1>US National Parks</h1>
+        </div>
+
+        <!-- Google Map API embed -->
         <div class="park-map" id="park-map"></div>
-        <div class="treemap-image">
-            <h3 class="tableau-header">National Parks Area (sq km)</h3>
-            <div class='tableauPlaceholder' id='viz1665603603385' style='position: relative'><noscript>
-                <a href='#'><img alt='parks_area_FINAL ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;20&#47;2022-10-11_ARTG5100_P2&#47;parks_area_FINAL&#47;1_rss.png' style='border: none' /></a></noscript>
+
+        <!-- Tableau treemap embed -->
+        <div class="treemap-toggle-buttons">
+            <button id="parks-area-button">Parks by Area</button>
+            <button id="parks-visitation-button">Parks Visitation</button>
+            <button id="parks-spending-button">Parks Visitor Spending</button>
+        </div>
+
+        <div id="parks-area" class="treemap-hidden">
+            <h3 class="tableau-header treemap-header">National Parks by Area (sq km)</h3>
+            <div class='tableauPlaceholder' id='viz1665603603385' style='position: relative'>
+                <noscript>
+                    <a href='#'>
+                        <img alt='parks_area_FINAL ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;20&#47;2022-10-11_ARTG5100_P2&#47;parks_area_FINAL&#47;1_rss.png' style='border: none' />
+                    </a>
+                </noscript>
                 <object class='tableauViz'  style='display:none;'>
                     <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
                     <param name='embed_code_version' value='3' />
@@ -41,22 +62,27 @@
                     <param name='display_count' value='yes' />
                     <param name='language' value='en-US' />
                     <param name='filter' value='publish=yes' />
+                </object>
+            </div>
 
-                    </object></div>
-
-                    <script type='text/javascript'>
-                    var divElement = document.getElementById('viz1665603603385');
-                    var vizElement = divElement.getElementsByTagName('object')[0];
-                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-                    var scriptElement = document.createElement('script');
-                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                    </script>
+            <script type='text/javascript'>
+                var divElement = document.getElementById('viz1665603603385');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
         </div>
-        <div class="treemap-image">
-            <h3 class="tableau-header">National Parks Visitation 2021</h3>
-            <div class='tableauPlaceholder' id='viz1665603881292' style='position: relative'><noscript><a href='#'>
-                <img alt='visits_region_FINAL ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;20&#47;2022-10-11_ARTG5100_P2&#47;visits_region_FINAL&#47;1_rss.png' style='border: none' /></a></noscript>
+
+        <div id="parks-visitation" class="treemap-hidden">
+            <h3 class="tableau-header treemap-header">National Parks Visitation 2021</h3>
+            <div class='tableauPlaceholder' id='viz1665603881292' style='position: relative'>
+                <noscript>
+                    <a href='#'>
+                        <img alt='visits_region_FINAL ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;20&#47;2022-10-11_ARTG5100_P2&#47;visits_region_FINAL&#47;1_rss.png' style='border: none' />
+                    </a>
+                </noscript>
                 <object class='tableauViz'  style='display:none;'>
                     <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
                     <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
@@ -71,20 +97,21 @@
                     <param name='display_count' value='yes' />
                     <param name='language' value='en-US' />
                     <param name='filter' value='publish=yes' />
+                </object>
+            </div>
 
-                    </object></div>
-
-                    <script type='text/javascript'>
-                        var divElement = document.getElementById('viz1665603881292');
-                        var vizElement = divElement.getElementsByTagName('object')[0];
-                        vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-                        var scriptElement = document.createElement('script');
-                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                        vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                        </script>
+            <script type='text/javascript'>
+                var divElement = document.getElementById('viz1665603881292');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
         </div>
-        <div class="treemap-image">
-            <h3 class="tableau-header">National Parks Visitor Spending 2021</h3>
+
+        <div id="parks-spending" class="treemap-hidden">
+            <h3 class="tableau-header treemap-header">National Parks Visitor Spending 2021</h3>
             <div class='tableauPlaceholder' id='viz1665604445266' style='position: relative'>
                 <noscript>
                     <a href='#'>
@@ -106,27 +133,27 @@
                     <param name='display_count' value='yes' />
                     <param name='language' value='en-US' />
                     <param name='filter' value='publish=yes' />
-
-                </object></div>
+                </object>
+            </div>
                 <script type='text/javascript'>
-                var divElement = document.getElementById('viz1665604445266');
-                var vizElement = divElement.getElementsByTagName('object')[0];
-                vizElement.style.width='100%';
-                vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-                var scriptElement = document.createElement('script');
-                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                    var divElement = document.getElementById('viz1665604445266');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    vizElement.style.width='100%';
+                    vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
                 </script>
         </div>
 
         <!-- Population vs Visitation -->
-    <div class="treemap-image-container">
-        <h2>United States Population and Parks Visitation</h2>
-        <img src="./images/pop_visits.jpg"
-                alt="chart showing national parks visits vs us population over time">
-    </div>
+        <div class="treemap-image-container">
+            <h2>United States Population and Parks Visitation</h2>
+            <img src="./images/pop_visits.jpg"
+                 alt="chart showing national parks visits vs us population over time">
+        </div>
 
-    <!-- Timeline -->
+        <!-- Timeline -->
         <div id="parks-visualization"></div>
         
         <div class="footer">
